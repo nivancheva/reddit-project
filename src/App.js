@@ -28,8 +28,10 @@ function App() {
               <h3>Card Text</h3>
               <img src='#'/>
               <div className='post-details'>
-                <img src='#'/>
-                <p>Author name</p>
+                <div>
+                  <img src='#'/>
+                  <span>Author name</span>
+                </div>
                 <p>11 hours ago</p>
                 <div>
                   <button>Comments</button>
