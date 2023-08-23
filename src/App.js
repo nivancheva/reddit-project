@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <div className='root'>
       <header className='flex'>
         <div className='flex'>
         <div>Logo</div>
@@ -27,13 +27,13 @@ function App() {
             <div className='card-container'>
               <h3>Card Text</h3>
               <img src='#'/>
-              <div className='card-details'>
+              <div className='post-details'>
                 <img src='#'/>
                 <p>Author name</p>
                 <p>11 hours ago</p>
                 <div>
                   <button>Comments</button>
-                  <p>736</p>
+                  <span>736</span>
                 </div>
               </div>
 
@@ -42,7 +42,7 @@ function App() {
         </article>
       </main>
 
-      <asside>
+      <aside>
         <div>
           <h2>Subreddits</h2>
           <ul>
@@ -82,8 +82,8 @@ function App() {
             
           </ul>
         </div>
-      </asside>
-    </>
+      </aside>
+    </div>
   );
 }
 
