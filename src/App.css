@@ -1,1 +1,14 @@
-
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  header .flex {
+    gap: .75em;
+  }
+  
+  span {
+    color:blue
+  }
+  
