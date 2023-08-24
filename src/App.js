@@ -1,6 +1,47 @@
 import './App.css';
+import { useState, useEffect } from 'react';
+import Subreddit from './components/Subreddit';
+import Post from './components/Post';
+
+const initialSubreddits = ["one", "two", "two", "two"];
+const initialPosts = [{
+  votes: '10.2k',
+  title: 'Card text',
+  author: 'Bobby',
+  lastEdit: '11 hours ago',
+  comments: 735
+}, {
+  votes: '10.2k',
+  title: 'Card text',
+  author: 'Neli',
+  lastEdit: '11 hours ago',
+  comments: 735
+}];
 
 function App() {
+  const [subreddits, setSubreddits] = useState([]);
+  const [posts, setPosts] = useState([]);
+
+  function handleSubredditClick(subreddit) {
+    // Call api to fetch posts for subreddit
+
+    setPosts(initialPosts.filter(c => c.author == "Neli"));
+  }
+
+  useEffect(() => {
+    // call API instead
+    let result = initialPosts;
+
+    setPosts(result);
+  }, [])
+
+  useEffect(() => {
+    // call API instead
+    let result = initialSubreddits;
+
+    setSubreddits(result);
+  }, [])
+
   return (
     <div className='root'>
       <header className='flex'>
@@ -10,78 +51,28 @@ function App() {
         </div>
 
         <form>
-        <input type='text' placeholder='Search' />
-        <button>Search</button>
+          <input type='text' placeholder='Search' />
+          <button>Search</button>
         </form>
       </header>
 
       <main>
-        <article>
-          <div className='card-wraper'>
-            <div className='votes'>
-              <button>up</button>
-              <p>10.2k</p>
-              <button>down</button>
-            </div>
-
-            <div className='card-container'>
-              <h3>Card Text</h3>
-              <img src='#'/>
-              <div className='post-details'>
-                <div>
-                  <img src='#'/>
-                  <span>Author name</span>
-                </div>
-                <p>11 hours ago</p>
-                <div>
-                  <button>Comments</button>
-                  <span>736</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </article>
+        {posts.map((post, idx) => {
+          return (
+            <Post key={idx} post={post} />
+          )
+        })}
       </main>
 
       <aside>
         <div>
           <h2>Subreddits</h2>
           <ul>
-            <li>
-              <button>Home</button>
-            </li>
-            <li>
-              <button>BaldursGate3</button>
-            </li>
-            <li>
-              <button>AskReddit</button>
-            </li>
-            <li>
-              <button>mildlyinfuriating</button>
-            </li>
-            <li>
-              <button>AmltheAsshole</button>
-            </li>
-            <li>
-              <button>funny</button>
-            </li>
-            <li>
-              <button>No StupidQuestions</button>
-            </li>
-            <li>
-              <button>facepalm</button>
-            </li>
-            <li>
-              <button>therewasnattempt</button>
-            </li>
-            <li>
-              <button>Damnthatsinteresting</button>
-            </li>
-            <li>
-              <button>pics</button>
-            </li>
-            
+            {subreddits.map((subreddit, idx) => {
+              return (
+                <Subreddit key={idx} subreddit={subreddit} onClick={handleSubredditClick}/>
+              )
+            })}
           </ul>
         </div>
       </aside>
