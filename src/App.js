@@ -18,14 +18,20 @@ const initialPosts = [{
   comments: 735
 }];
 
+const PopularSubredditsURL = "https://www.reddit.com/subreddits/popular.json";
+
+// Posts URL: https://www.reddit.com/r/AskReddit/.json
+// Subreddit.url comes to /r/AskReddit/
+const PostsBaseURL = "https://www.reddit.com";
+
+// PostsBaseURL + subreddit.url + ".json"
+
 function App() {
   const [subreddits, setSubreddits] = useState([]);
   const [posts, setPosts] = useState([]);
 
   function handleSubredditClick(subreddit) {
     // Call api to fetch posts for subreddit
-
-    setPosts(initialPosts.filter(c => c.author == "Neli"));
   }
 
   useEffect(() => {
