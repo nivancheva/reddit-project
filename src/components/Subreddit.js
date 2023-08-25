@@ -1,9 +1,11 @@
+import './Subreddits.css'
+
 export default function Subreddit({subreddit, onClick}) {
     return (
         <li>
             <div onClick={() => onClick(subreddit)}>
-                <img src='#'/>
-                {subreddit}
+                <img className="subreddit_img" src={subreddit.data.header_img}/>
+                {subreddit.data.title}
             </div>
         </li>
     )
