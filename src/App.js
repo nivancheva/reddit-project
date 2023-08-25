@@ -3,49 +3,42 @@ import { useState, useEffect } from 'react';
 import Subreddit from './components/Subreddit';
 import Post from './components/Post';
 
-const initialSubreddits = ["one", "two", "two", "two"];
-const initialPosts = [{
-  votes: '10.2k',
-  title: 'Card text',
-  author: 'Bobby',
-  lastEdit: '11 hours ago',
-  comments: 735
-}, {
-  votes: '10.2k',
-  title: 'Card text',
-  author: 'Neli',
-  lastEdit: '11 hours ago',
-  comments: 735
-}];
-
 const PopularSubredditsURL = "https://www.reddit.com/subreddits/popular.json";
-
-// Posts URL: https://www.reddit.com/r/AskReddit/.json
-// Subreddit.url comes to /r/AskReddit/
 const PostsBaseURL = "https://www.reddit.com";
-
-// PostsBaseURL + subreddit.url + ".json"
 
 function App() {
   const [subreddits, setSubreddits] = useState([]);
   const [posts, setPosts] = useState([]);
 
   function handleSubredditClick(subreddit) {
-    // Call api to fetch posts for subreddit
+    getPosts(subreddit.data.url);
+  }
+  
+  async function getPosts(subreddit) {
+    const response = await fetch(`${PostsBaseURL}${subreddit}.json`);
+    const post = await response.json();
+
+    setPosts(post.data.children);
   }
 
   useEffect(() => {
-    // call API instead
-    let result = initialPosts;
-
-    setPosts(result);
-  }, [])
+    if (subreddits.length) {
+      getPosts(subreddits[0].data.url);
+    }
+    else {
+      setPosts([]);
+    }
+  }, [subreddits])
 
   useEffect(() => {
-    // call API instead
-    let result = initialSubreddits;
+    async function getSubreddits() {
+      const response = await fetch(PopularSubredditsURL);
+      const reddits = await response.json();
 
-    setSubreddits(result);
+      setSubreddits(reddits.data.children);
+    }
+
+    getSubreddits();
   }, [])
 
   return (
