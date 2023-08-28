@@ -2,3 +2,12 @@
     width: 24px;
     height: 24px;
 }
+
+.subreddit {
+    cursor: pointer;
+}
+
+.subreddit:hover {
+    background-color: rgb(246, 248, 248);
+    border-radius: .25em;
+}

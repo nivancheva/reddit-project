@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Subreddit from './components/Subreddit';
 import Post from './components/Post';
+import Search from './components/Search';
 
 const PopularSubredditsURL = "https://www.reddit.com/subreddits/popular.json";
 const PostsBaseURL = "https://www.reddit.com";
@@ -9,9 +10,18 @@ const PostsBaseURL = "https://www.reddit.com";
 function App() {
   const [subreddits, setSubreddits] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [filterResults, setFilterResults] = useState([]);
 
   function handleSubredditClick(subreddit) {
     getPosts(subreddit.data.url);
+  }
+
+  function handleSearch(search) {
+    let result = posts.filter(post => {
+      return post.data.title.includes(search);
+    })
+
+    setFilterResults(result);
   }
   
   async function getPosts(subreddit) {
@@ -19,6 +29,7 @@ function App() {
     const post = await response.json();
 
     setPosts(post.data.children);
+    setFilterResults(post.data.children);
   }
 
   useEffect(() => {
@@ -49,14 +60,11 @@ function App() {
         <p><span>Reddit</span>Minimal</p>
         </div>
 
-        <form>
-          <input type='text' placeholder='Search' />
-          <button>Search</button>
-        </form>
+        <Search onClick={handleSearch} />
       </header>
 
       <main>
-        {posts.map((post, idx) => {
+        {filterResults.map((post, idx) => {
           return (
             <Post key={idx} post={post} />
           )
