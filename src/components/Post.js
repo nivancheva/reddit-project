@@ -1,6 +1,7 @@
 import "./Posts.css"
 import { useState, useEffect } from "react";
 import getCreatedString from "../helpers/getCreatedString";
+import Comment from "./Comment";
 
 const PostsBaseURL = "https://www.reddit.com";
 
@@ -47,14 +48,7 @@ export default function Post({post}) {
                     <div className="comments">
                         {comments.map((comment, idx) => {
                             return (
-                                <div className="comment-metadata" key={idx}>
-                                    <div>
-                                        <img src="#"/>
-                                        <span>{comment.data.author}</span>
-                                        <p>{getCreatedString(comment.data.created)}</p>
-                                    </div>
-                                    <p>{comment.data.body}</p>
-                                </div>
+                                <Comment comment={comment} key={idx}/>
                             )
                             })}
                     </div>
