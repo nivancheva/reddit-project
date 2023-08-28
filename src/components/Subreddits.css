@@ -1,13 +1,23 @@
 .subreddit_img {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgb(80, 80, 80);
 }
 
 .subreddit {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    height: fit-content;
 }
 
 .subreddit:hover {
     background-color: rgb(246, 248, 248);
     border-radius: .25em;
+}
+
+li {
+    margin-bottom: .75em;
 }
