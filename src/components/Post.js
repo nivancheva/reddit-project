@@ -44,10 +44,10 @@ export default function Post({post}) {
                             <span>{post.data.num_comments}</span>
                         </div>
                     </div>
-                    <div>
+                    <div className="comments">
                         {comments.map((comment, idx) => {
                             return (
-                                <div key={idx}>
+                                <div className="comment-metadata" key={idx}>
                                     <div>
                                         <img src="#"/>
                                         <span>{comment.data.author}</span>

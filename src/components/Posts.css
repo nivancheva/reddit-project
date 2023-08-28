@@ -2,3 +2,19 @@
     width: 100%;
     height: auto;
 }
+
+.comments {
+    
+    margin: .5em 0;
+    padding: 1em;
+    border-radius: var(--border-radius);
+    display: grid;
+    gap: .5em;
+}
+
+.comment-metadata {
+    display: flex;
+    margin-bottom: 1em;
+    align-items: center;
+    background: #fcfcfc;
+}
