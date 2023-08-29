@@ -1,4 +1,4 @@
-import "./Posts.css"
+import "./Post.css"
 import { useState, useEffect } from "react";
 import getCreatedString from "../helpers/getCreatedString";
 import Comment from "./Comment";

@@ -3,7 +3,8 @@
   grid-template-columns: 1fr 2fr 1fr;
   gap: 1em;
 
-  max-width: 80%;
+  width: 80%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -16,6 +17,9 @@
 header {
   grid-column: 1/-1;
   font-size: 2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 main {
@@ -35,7 +39,7 @@ header .flex {
 }
 
 
-span {
+.logo_name span {
     color:blue
 }
 
@@ -45,6 +49,9 @@ aside {
   border-radius: 4px;
   padding: 1.5em;
   height: fit-content;
+
+  position: sticky;
+  top: 100px;
 }
   
 ul {
@@ -52,7 +59,7 @@ ul {
   padding: 0;
 }
 
-@media (max-width:800px) {
+@media (max-width:960px) {
   .root {
     margin-top: 2rem;
   }
@@ -66,15 +73,12 @@ ul {
   }
 
   .flex {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: .75em;
+
   }
 
-  .logo_name {
-    flex-direction: row;
-  }
-
-  p {
-    margin: 0;
+  .logo_name p {
+    display: none;
   }
 }

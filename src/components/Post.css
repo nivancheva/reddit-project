@@ -12,10 +12,16 @@
 }
 
 .comment-metadata {
-    display: flex;
     margin-bottom: 1em;
-    align-items: center;
     background: #fcfcfc;
+    padding: 1em;
+}
+
+.comment-autor {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 0.75rem;
 }
 
 .card-container {

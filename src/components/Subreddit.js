@@ -1,4 +1,4 @@
-import './Subreddits.css'
+import './Subreddit.css'
 
 export default function Subreddit({subreddit, onClick}) {
     const imgSrc = subreddit.data.header_img || "#";
