@@ -2,6 +2,9 @@ import "./Posts.css"
 import { useState, useEffect } from "react";
 import getCreatedString from "../helpers/getCreatedString";
 import Comment from "./Comment";
+import upLong from '../up-long-solid.svg';
+import downLong from '../down-long-solid.svg';
+import comment from '../message-regular.svg'
 
 const PostsBaseURL = "https://www.reddit.com";
 
@@ -27,9 +30,9 @@ export default function Post({post}) {
         <article>
             <div className='card-wraper'>
                 <div className='votes'>
-                    <button>up</button>
+                    <button className="btn"><img src={upLong}/></button>
                     <p>{post.data.ups}</p>
-                    <button>down</button>
+                    <button className="btn"><img src={downLong}/></button>
                 </div>
                 <div className='card-container'>
                     <h3>{post.data.title}</h3>
@@ -40,8 +43,8 @@ export default function Post({post}) {
                             <span>{post.data.author}</span>
                         </div>
                         <p>{getCreatedString(post.data.created)}</p>
-                        <div>
-                            <button onClick={() => toggleComments()}>Comments</button>
+                        <div className="btn_section">
+                            <button className="btn" onClick={() => toggleComments()}><img src={comment}/></button>
                             <span>{post.data.num_comments}</span>
                         </div>
                     </div>

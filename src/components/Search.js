@@ -1,4 +1,6 @@
 import { useState } from "react";
+import magnifyingGlass from '../magnifying-glass-solid.svg';
+import './Search.css'
 
 export default function Search({onClick}) {
     const [search, setSearch] = useState("");
@@ -10,16 +12,14 @@ export default function Search({onClick}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="search_form" onSubmit={handleSubmit}>
             <input 
+                className="search_input"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Search"
             />
-            <button
-                className="btn btn-primary">
-                Search
-            </button>
+            <button className="btn"><img src={magnifyingGlass}/></button>
         </form>
     );
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Subreddit from './components/Subreddit';
 import Post from './components/Post';
 import Search from './components/Search';
+import reddit from './reddit.svg';
 
 const PopularSubredditsURL = "https://www.reddit.com/subreddits/popular.json";
 const PostsBaseURL = "https://www.reddit.com";
@@ -54,10 +55,10 @@ function App() {
 
   return (
     <div className='root'>
-      <header className='flex'>
-        <div className='flex'>
-        <div>Logo</div>
-        <p><span>Reddit</span>Minimal</p>
+      <header className='flex header'>
+        <div className='flex logo_name'>
+          <img src={reddit}/>
+          <p><span>Reddit</span>Minimal</p>
         </div>
 
         <Search onClick={handleSearch} />

@@ -42,3 +42,9 @@ h3 {
     align-items: center;
     justify-content: space-between;
 }
+
+.btn_section {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
