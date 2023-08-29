@@ -48,7 +48,9 @@ aside {
   box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);;
   border-radius: 4px;
   padding: 1.5em;
-  height: fit-content;
+  max-height: 800px;
+  overflow: auto;
+  width: 100%;
 
   position: sticky;
   top: 100px;
@@ -62,6 +64,8 @@ ul {
 @media (max-width:960px) {
   .root {
     margin-top: 2rem;
+    font-size: .875rem;
+    width: 100%;
   }
 
   /* aside {
@@ -70,12 +74,17 @@ ul {
 
   main {
     grid-column: 1/4;
+    padding: 0;
   }
 
   .flex {
     justify-content: center;
-    gap: .75em;
+    gap: .5em;
 
+  }
+
+  .header {
+    top:10px
   }
 
   .logo_name p {
