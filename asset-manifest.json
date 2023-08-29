@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reddit-project/static/css/main.216f4cdd.css",
-    "main.js": "/reddit-project/static/js/main.d9b95c21.js",
+    "main.css": "/reddit-project/static/css/main.cdf29a70.css",
+    "main.js": "/reddit-project/static/js/main.3578b97a.js",
     "static/js/787.718badc8.chunk.js": "/reddit-project/static/js/787.718badc8.chunk.js",
     "static/media/reddit.svg": "/reddit-project/static/media/reddit.3700e7a068186781f91384dec970950d.svg",
     "index.html": "/reddit-project/index.html",
@@ -9,12 +9,12 @@
     "static/media/magnifying-glass-solid.svg": "/reddit-project/static/media/magnifying-glass-solid.54cbf681c1110556e1fbf6be6a38151d.svg",
     "static/media/down-long-solid.svg": "/reddit-project/static/media/down-long-solid.1e1fa77e04c06c0e9c159e63ae7454c3.svg",
     "static/media/up-long-solid.svg": "/reddit-project/static/media/up-long-solid.dae0c18384b65e1cd115cbef34bfef11.svg",
-    "main.216f4cdd.css.map": "/reddit-project/static/css/main.216f4cdd.css.map",
-    "main.d9b95c21.js.map": "/reddit-project/static/js/main.d9b95c21.js.map",
+    "main.cdf29a70.css.map": "/reddit-project/static/css/main.cdf29a70.css.map",
+    "main.3578b97a.js.map": "/reddit-project/static/js/main.3578b97a.js.map",
     "787.718badc8.chunk.js.map": "/reddit-project/static/js/787.718badc8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.216f4cdd.css",
-    "static/js/main.d9b95c21.js"
+    "static/css/main.cdf29a70.css",
+    "static/js/main.3578b97a.js"
   ]
 }
