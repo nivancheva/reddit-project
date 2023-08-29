@@ -3,8 +3,7 @@
     height: auto;
 }
 
-.comments {
-    
+.comments {  
     margin: .5em 0;
     padding: 1em;
     border-radius: var(--border-radius);
@@ -17,6 +16,10 @@
     margin-bottom: 1em;
     align-items: center;
     background: #fcfcfc;
+}
+
+.card-container {
+    width: 100%;
 }
 
 .card-wraper {
